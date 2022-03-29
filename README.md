@@ -27,12 +27,12 @@ php artisan key:generate
 php artisan migrate
 
 ###### Seeder bdd
-php artisan db:seed
-php artisan db:seed --class=createUserSeeder
+php artisan db:seed  
+php artisan db:seed --class=createUserSeeder  
 
 ### Frontend
-npm install
-npm run dev
+npm install  
+npm run dev  
 
 
 ###### Run on local
