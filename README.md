@@ -1,5 +1,9 @@
 # Caisse du jour
-La base de données se trouve dans la racine du projet
+La base de données se trouve dans la racine du projet : caisse_db.sql
+current branche main
+## Accès :
+Login : rakotobe.hariony@gmail.com
+Password : 123456
 
 ## Procédure d'Installation
 
@@ -22,10 +26,6 @@ php artisan migrate
 ###### Seeder bdd
 php artisan db:seed
 php artisan db:seed --class=createUserSeeder
-
-
-### install breeze
-php artisan breeze:install
 
 ### Frontend
 npm install
