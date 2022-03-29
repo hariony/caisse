@@ -1,9 +1,6 @@
 # Caisse du jour [Laravel 9]
 * La base de données se trouve dans la racine du projet : __caisse_db.sql__  
 * current branche __main__  
-
-## Lien démo :
-https://caisse.genius-at-work.com
 ## Accès :
 Login : rakotobe.hariony@gmail.com  
 Password : 123456  
