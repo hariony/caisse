@@ -1,6 +1,9 @@
 # Caisse du jour
 La base de données se trouve dans la racine du projet : caisse_db.sql
 current branche main
+
+## Lien démo :
+https://caisse.genius-at-work.com
 ## Accès :
 Login : rakotobe.hariony@gmail.com
 Password : 123456
