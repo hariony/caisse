@@ -23,6 +23,7 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                @if (!empty($type_operations))    
                                     @foreach($type_operations as $data)
                                         <tr id="typeop-{{ $data['id'] }}">
                                             <td>{{ $data['id'] }}</td>
@@ -34,7 +35,12 @@
                                                    data-id="{{ $data['id'] }}">Supprimer</a>
                                             </td>
                                         </tr>
-                                    @endforeach                          
+                                    @endforeach             
+                                @else
+                                        <tr>
+                                            <td colspan="4">Aucune donné n'est encore enregistré dans la base de données</td>
+                                        </tr>
+                                @endif                 
                                 </tbody>
                               </table>
                         </div>

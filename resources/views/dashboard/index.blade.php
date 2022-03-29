@@ -10,11 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="container">
                     <div class="row p-4">
-                        <div class="col-3">
+                        <div class="col-12 col-sm-4 col-md-3">
                             <h2>Total caisse</h2>
                             <span class="total-caisse"> {{ $total }} €</span>
                         </div>
-                        <div class="col-9">
+                        <div class="col-12 col-sm-8 col-md-9">
                             <h2>Opération du jour</h2>
                             <table class="table">
                                 <thead>
@@ -50,6 +50,10 @@
                                         </td>
                                       </tr>
                                     @endforeach
+                                  @else
+                                  <tr>
+                                    <td colspan="7"> Aucune donnée n'est encore enregistré dans la base de données</td>
+                                  </tr>  
                                   @endif  
                                 </tbody>
                               </table>
