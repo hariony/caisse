@@ -5082,13 +5082,15 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+/**ARRONDISSEMENT DES NOMBRES*/
+
 var formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
-}); //caisse calcul
+});
+/**ACTIONS POUR LA CAISSE ET TYPE OPERATIONS*/
 
 jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
-  //filter only number
   filter('.event-form');
   calculate(false, '');
   jquery__WEBPACK_IMPORTED_MODULE_1___default()('.delete-operation').on('click', function (e) {
@@ -5138,6 +5140,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
     });
   });
 });
+/**CALCUL TOTAL*/
 
 function sum_total() {
   var sum = 0;
@@ -5149,6 +5152,8 @@ function sum_total() {
   jquery__WEBPACK_IMPORTED_MODULE_1___default()('#total').html(sum + '€');
   jquery__WEBPACK_IMPORTED_MODULE_1___default()('input[name^="total"]').val(sum);
 }
+/**CALCUL SOUS-TOTAL*/
+
 
 function sub_total(type) {
   var sum = 0;
@@ -5159,6 +5164,8 @@ function sub_total(type) {
   sum = formatter.format(sum);
   jquery__WEBPACK_IMPORTED_MODULE_1___default()('.subtotal-' + type).html(sum + '€');
 }
+/**CALCUL POUR CHAQUE TYPE D'OPERATIONS*/
+
 
 function calculate(is_line, uniqid) {
   if (is_line) {
@@ -5215,6 +5222,8 @@ function calculate(is_line, uniqid) {
     });
   }
 }
+/**FILTRE LE CHAMP INPUT POUR NOMBRE SEULEMENT*/
+
 
 function filter(targetform) {
   jquery__WEBPACK_IMPORTED_MODULE_1___default()(targetform + ' input').keyup(function (e) {

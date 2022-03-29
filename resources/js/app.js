@@ -12,14 +12,15 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+/**ARRONDISSEMENT DES NOMBRES*/
 const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,      
     maximumFractionDigits: 2,
  });
 
-//caisse calcul
+/**ACTIONS POUR LA CAISSE ET TYPE OPERATIONS*/
 $(function(){
-    //filter only number
+
     filter('.event-form');
     calculate(false, '');
 
@@ -75,6 +76,7 @@ $(function(){
     });
 })
 
+/**CALCUL TOTAL*/
 function sum_total(){
    var sum = 0;
     $( '.subtotal-item' ).each( function( i , e ) {
@@ -87,6 +89,7 @@ function sum_total(){
     $('input[name^="total"]').val(sum);
 }
 
+/**CALCUL SOUS-TOTAL*/
 function sub_total(type){
     var sum = 0;
      $( '#'+type+' .subtotal-item' ).each( function( i , e ) {
@@ -98,6 +101,7 @@ function sub_total(type){
      $('.subtotal-'+type).html(sum+'€');
  }
 
+/**CALCUL POUR CHAQUE TYPE D'OPERATIONS*/
 function calculate(is_line,uniqid){
     if (is_line){
         $("#line-"+uniqid).on( "input", function() {
@@ -149,6 +153,7 @@ function calculate(is_line,uniqid){
    
 }
 
+/**FILTRE LE CHAMP INPUT POUR NOMBRE SEULEMENT*/
 function filter(targetform){
     $(targetform+' input').keyup(function(e)                              {
         if (/\D/g.test(this.value))

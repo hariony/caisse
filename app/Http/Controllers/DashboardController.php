@@ -88,7 +88,7 @@ class DashboardController extends Controller
             $retrait = Operation::all()->sum('retrait');
             $total = (($ajout - $retrait) > 0) ? $ajout - $retrait : 0;
             return response()->json([
-                'total' => $total,
+                'total' => round($total,2),
             ]);
         }
     }
