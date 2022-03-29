@@ -1,0 +1,91 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import "bootstrap";
+
+/*customized styles*/
+
+h1 {
+    font-size: 1.6rem!important;
+}
+
+h2 {
+    font-size: 1.6rem;
+    border-bottom: 4px solid #E0D396;
+    padding-bottom: 10px;
+    font-weight: 300;
+}
+
+hr.brown {
+    background-color: #E0D396;
+    border: 2px solid #E0D396;
+    width: 100%;
+}
+
+button.green {
+    padding: 6px 1%;
+    font-size: 1rem;
+    background-color: #8BC34A!important;
+    background: #8BC34A!important;
+    border-color: #8BC34A!important;
+}
+
+.rel {
+    position: relative;
+}
+
+.right-amount {
+    position: absolute;
+    right: 4%;
+    top: 100px;
+}
+
+.right-amount#total {
+    font-size: 3rem;
+}
+
+.right-amount.subtotal-billets,
+.right-amount.subtotal-pieces,
+.right-amount.subtotal-centimes {
+    font-size: 2rem;
+}
+
+.line-end {
+    border-bottom: 1px solid grey!important;
+    width: 100%;
+}
+
+.center-box {
+    margin: 30px auto;
+    text-align: center;
+    width: 100%;
+}
+
+.pd-left {
+    padding-left: 3%;
+}
+
+.mg-left {
+    margin-left: 3%;
+}
+
+.mt-custom {
+    margin-top: 31px;
+}
+
+.total-caisse {
+    display: block;
+    margin: 20px auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.operation-view {
+    position: relative;
+}
+
+.add-operation-type {
+    position: absolute;
+    top: 15px;
+    right: 7%;
+}
