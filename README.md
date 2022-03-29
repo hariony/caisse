@@ -33,4 +33,5 @@ npm run dev
 
 
 ###### Run on local
-php artisan serve or php -S localhost:8000 -t public/
+php -S localhost:8000 -t public/  
+php artisan serve  
