@@ -1,6 +1,6 @@
 # Caisse du jour [Laravel 9]
 * La base de données se trouve dans la racine du projet : __caisse_db.sql__  
-* current branche __main__  
+* current branch __main__  
 ## Accès :
 Login : user@gmail.com  
 Password : 123456  
