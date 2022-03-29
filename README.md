@@ -1,6 +1,6 @@
 # Caisse du jour [Laravel 9]
-La base de données se trouve dans la racine du projet : caisse_db.sql
-current branche main
+* La base de données se trouve dans la racine du projet : caisse_db.sql  
+* current branche main  
 
 ## Lien démo :
 https://caisse.genius-at-work.com
