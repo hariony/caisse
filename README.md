@@ -5,8 +5,8 @@ current branche main
 ## Lien démo :
 https://caisse.genius-at-work.com
 ## Accès :
-Login : rakotobe.hariony@gmail.com
-Password : 123456
+Login : rakotobe.hariony@gmail.com  
+Password : 123456  
 
 ## Procédure d'Installation
 
