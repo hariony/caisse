@@ -159,4 +159,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Hariony RAKOTOBE', 'rakotobe.hariony@gmail.com', null, '$2y$10$fS8eVXYn.qouJJad/PUd5ec28dw.jsIACiIdBLVGQL3qmxcZwmmsa', null, '2022-03-29 13:56:24', '2022-03-29 13:56:29');
+INSERT INTO `users` VALUES ('1', 'Hariony RAKOTOBE', 'user@gmail.com', null, '$2y$10$fS8eVXYn.qouJJad/PUd5ec28dw.jsIACiIdBLVGQL3qmxcZwmmsa', null, '2022-03-29 13:56:24', '2022-03-29 13:56:29');

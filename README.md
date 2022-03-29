@@ -2,7 +2,7 @@
 * La base de données se trouve dans la racine du projet : __caisse_db.sql__  
 * current branche __main__  
 ## Accès :
-Login : rakotobe.hariony@gmail.com  
+Login : user@gmail.com  
 Password : 123456  
 
 ## Procédure d'Installation
