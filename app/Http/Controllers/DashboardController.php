@@ -10,6 +10,12 @@ class DashboardController extends Controller
 {
     //
 
+    static $nominal = array(
+        'billets' => [5,10,20,50,100,200,500],
+        'pieces' => [1,2],
+        'centimes' => [1,2,5,10,20,50]
+    );
+
     public function index(){
         $operations = Operation::all();
         $ajout = Operation::all()->sum('ajout');
@@ -95,7 +101,7 @@ class DashboardController extends Controller
 
     public function entry(Request $request){
         $typeoperations = TypeOperation::all()->toArray();
-        return view('dashboard.entry',['typeoperations'=>$typeoperations]);
+        return view('dashboard.entry',['typeoperations'=>$typeoperations,'nominal'=>self::$nominal]);
     }
 
     public function edit(Request $request){

@@ -12,13 +12,13 @@
                     <form action="{{ route('dashboard.store') }}" method="POST">
                         {{ csrf_field() }}
                         <x-cash-fund title="Entrée de fond de caisse" :operations="[]" :typeoperations="$typeoperations"></x-cash-fund>
-                        <x-money-type title="Billets" :nominal="[5,10,20,50,100,200,500]" :type="'billets'" :datas="[]">
+                        <x-money-type title="Billets" :nominal="$nominal['billets']" :type="'billets'" :datas="[]">
                             <x-slot name='subtotal'>0€</x-slot>
                         </x-money-type>
-                        <x-money-type title="Pièces" :nominal="[1,2]" :type="'pieces'" :datas="[]">
+                        <x-money-type title="Pièces" :nominal="$nominal['pieces']" :type="'pieces'" :datas="[]">
                             <x-slot name='subtotal'>0€</x-slot>
                         </x-money-type>
-                        <x-money-type title="Centimes" :nominal="[1,2,5,10,20,50]" :type="'centimes'" :datas="[]">
+                        <x-money-type title="Centimes" :nominal="$nominal['centimes']" :type="'centimes'" :datas="[]">
                             <x-slot name='subtotal'>0€</x-slot>
                             <x-slot name='liner'><hr class="line-end mt-5"></x-slot>
                         </x-money-type>

@@ -7,6 +7,8 @@ Password : 123456
 
 ## Procédure d'Installation
 
+###### Requirement
+PHP 8.1
 ###### Cloner dépôt
 git clone git@github.com:hariony/caisse.git
 
