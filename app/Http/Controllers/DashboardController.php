@@ -11,7 +11,7 @@ class DashboardController extends Controller
     //
 
     public function index(){
-        $operations = Operation::all()->toArray();
+        $operations = Operation::all();
         $ajout = Operation::all()->sum('ajout');
         $retrait = Operation::all()->sum('retrait');
         $total = (($ajout - $retrait) > 0) ? $ajout - $retrait : 0;

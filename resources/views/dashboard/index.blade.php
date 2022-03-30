@@ -32,21 +32,16 @@
                                   @if(!empty($operations))
                                     @foreach($operations as $operation)
                                       <tr id="op-{{ $operation['id'] }}">
-                                        <th scope="row">{{ \Carbon\Carbon::parse($operation['date'])->format('d M Y') }}</th>
-                                        <td>
-                                          @php
-                                                $title_type = \App\Models\TypeOperation::where('id',$operation['typeoperation_id'])->pluck('titre')->first();
-                                          @endphp
-                                                {{ $title_type }}
-                                        </td>
-                                        <td>{{ $operation['total'] }} €</td>
-                                        <td>{{ $operation['retrait'] }} €</td>
-                                        <td>{{ $operation['ajout'] }} €</td>
-                                        <td>{{ $operation['total'] }} €</td>
+                                        <th scope="row">{{ \Carbon\Carbon::parse($operation->date)->format('d M Y') }}</th>
+                                        <td>{{ $operation->typeoperation->titre }}</td>
+                                        <td>{{ $operation->total }} €</td>
+                                        <td>{{ $operation->retrait }} €</td>
+                                        <td>{{ $operation->ajout }} €</td>
+                                        <td>{{ $operation->total }} €</td>
                                         <td class="actions">
-                                            <a href="/dashboard/edit/{{ $operation['id'] }}" class="btn btn-outline-warning">Editer</a>
+                                            <a href="/dashboard/edit/{{ $operation->id }}" class="btn btn-outline-warning">Editer</a>
                                             <a href="#" class="btn btn-outline-danger delete-operation"
-                                              item-id="{{ $operation['id'] }}">Supprimer</a>
+                                              item-id="{{ $operation->id }}">Supprimer</a>
                                         </td>
                                       </tr>
                                     @endforeach
