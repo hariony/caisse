@@ -10,7 +10,7 @@ Password : 123456
 ###### Cloner dépôt
 git clone git@github.com:hariony/caisse.git
 
-### Backend
+## Backend
 composer install
 
 ###### Configuration bdd
@@ -28,11 +28,11 @@ php artisan db:seed
 php artisan db:seed --class=createUserSeeder  
 php artisan db:seed --class=TypeOperationSeeder  
 
-### Frontend
+## Frontend
 npm install  
 npm run dev  
 
 
-###### Run on local
+## Run project
 php -S localhost:8000 -t public/  
 php artisan serve  
