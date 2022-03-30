@@ -13,13 +13,13 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="operation_id" value="{{$operation_id}}">
                         <x-cash-fund title="Entrée de fond de caisse" :operations="$operations" :typeoperations="$typeoperations"></x-cash-fund>
-                        <x-money-type title="Billets" :nominal="[5,10,20,50,100,200,500]" :type="'billets'" :datas="$datas">
+                        <x-money-type title="Billets" :nominal="$nominal['billets']" :type="'billets'" :datas="$datas">
                             <x-slot name='subtotal'>0€</x-slot>
                         </x-money-type>
-                        <x-money-type title="Pièces" :nominal="[1,2]" :type="'pieces'" :datas="$datas">
+                        <x-money-type title="Pièces" :nominal="$nominal['pieces']" :type="'pieces'" :datas="$datas">
                             <x-slot name='subtotal'>0€</x-slot>
                         </x-money-type>
-                        <x-money-type title="Centimes" :nominal="[1,2,5,10,20,50]" :type="'centimes'" :datas="$datas">
+                        <x-money-type title="Centimes" :nominal="$nominal['centimes']" :type="'centimes'" :datas="$datas">
                             <x-slot name='subtotal'>0€</x-slot>
                             <x-slot name='liner'><hr class="line-end mt-5"></x-slot>
                         </x-money-type>

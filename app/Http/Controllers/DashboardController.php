@@ -113,7 +113,8 @@ class DashboardController extends Controller
             'operations' => $operations,
             'datas' => $datas,
             'operation_id' => $operation_id,
-            'typeoperations' => $typeoperations
+            'typeoperations' => $typeoperations,
+            'nominal'=>self::$nominal
         ]);
     }
 
