@@ -26,6 +26,7 @@ php artisan migrate
 ###### Seeder bdd
 php artisan db:seed  
 php artisan db:seed --class=createUserSeeder  
+php artisan db:seed --class=TypeOperationSeeder  
 
 ### Frontend
 npm install  
