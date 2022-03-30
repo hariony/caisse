@@ -1,6 +1,3 @@
-<p align="center">
-<img src="https://www.storialtech.com/storage/app/public/image/tutorial/63JE4xGpgDTLmn0PECQt6hBLdILm4WAyA3mget04.jpg">
-</p>
 # Caisse du jour [Laravel 9]
 * La base de données se trouve dans la racine du projet : __caisse_db.sql__  
 * current branch __main__  
