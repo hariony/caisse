@@ -10,7 +10,7 @@ PHP 8.1
 
 ## Procédure d'Installation
 
-###### Cloner dépôt
+###### Cloner le dépôt
 git clone git@github.com:hariony/caisse.git
 
 ###### package installation
