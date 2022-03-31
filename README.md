@@ -5,35 +5,37 @@
 Login : user@gmail.com  
 Password : 123456  
 
+## Requirement
+PHP 8.1
+
 ## Procédure d'Installation
 
-###### Requirement
-PHP 8.1
 ###### Cloner dépôt
 git clone git@github.com:hariony/caisse.git
 
-## Backend
-composer install
-
-###### Configuration bdd
-cp .env.example .env
-
+###### package installation
+Composer install
 ###### Key
 php artisan key:generate
+###### Configuration
+cp .env.example .env
+## Database Configuration
+### Option 1
 
+mysql -u username -p caisse_db < caisse_db.sql
 
-###### Migration tables
+### Option 2
+
+###### Run Migration tables
 php artisan migrate
-
-###### Seeder bdd
+###### Run Seeder bdd
 php artisan db:seed  
 php artisan db:seed --class=createUserSeeder  
 php artisan db:seed --class=TypeOperationSeeder  
 
-## Frontend
+## Rebuild project
 npm install  
 npm run dev  
-
 
 ## Run project
 php -S localhost:8000 -t public/  
