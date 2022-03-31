@@ -22,6 +22,7 @@ cp .env.example .env
 ## Database Configuration
 ### Option 1
 
+###### import sql file on project root folder
 mysql -u username -p caisse_db < caisse_db.sql
 
 ### Option 2
