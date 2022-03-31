@@ -11,7 +11,7 @@
         </div>
         <div class="mb-2 w-25">
             <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" id="date" name="date" placeholder="{{ !empty($operations) ? \Carbon\Carbon::parse($operations['date'])->format('d/m/Y') : "" }}" value="{{ !empty($operations) ? \Carbon\Carbon::parse($operations['date'])->format('d/m/Y') : "" }}">
+            <input type="date" class="form-control" id="date" name="date" placeholder="{{ !empty($operations) ? \Carbon\Carbon::parse($operations['date'])->format('d/m/Y') : "" }}" value="{{ !empty($operations) ? \Carbon\Carbon::parse($operations['date'])->format('Y-m-d') : "" }}">
         </div>
         <div class="mb-2">
             <label for="note" class="form-label">Note</label>
