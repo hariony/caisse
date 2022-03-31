@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('operations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_operation_id');
+            $table->unsignedInteger('typeoperation_id')->nullable();
+            $table->foreign('typeoperation_id')->references('id')->on('type_operations');
             $table->text('datas')->nullable();
             $table->string('total')->nullable();
             $table->string('ajout')->nullable();

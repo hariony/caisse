@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50731
 File Encoding         : 65001
 
-Date: 2022-03-29 22:59:45
+Date: 2022-03-31 19:14:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,8 +52,8 @@ INSERT INTO `migrations` VALUES ('1', '2014_10_12_000000_create_users_table', '1
 INSERT INTO `migrations` VALUES ('2', '2014_10_12_100000_create_password_resets_table', '1');
 INSERT INTO `migrations` VALUES ('3', '2019_08_19_000000_create_failed_jobs_table', '1');
 INSERT INTO `migrations` VALUES ('4', '2019_12_14_000001_create_personal_access_tokens_table', '1');
-INSERT INTO `migrations` VALUES ('5', '2022_03_29_092553_create_operations_table', '1');
-INSERT INTO `migrations` VALUES ('6', '2022_03_29_103959_create_type_operations_table', '1');
+INSERT INTO `migrations` VALUES ('5', '2022_03_29_092553_create_type_operations_table', '1');
+INSERT INTO `migrations` VALUES ('6', '2022_03_29_103959_create_operations_table', '1');
 
 -- ----------------------------
 -- Table structure for `operations`
@@ -61,7 +61,7 @@ INSERT INTO `migrations` VALUES ('6', '2022_03_29_103959_create_type_operations_
 DROP TABLE IF EXISTS `operations`;
 CREATE TABLE `operations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `typeoperation_id` int(11) NOT NULL,
+  `typeoperation_id` int(10) unsigned DEFAULT NULL,
   `datas` text COLLATE utf8mb4_unicode_ci,
   `total` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ajout` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -70,15 +70,18 @@ CREATE TABLE `operations` (
   `date` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`),
+  KEY `operations_typeoperation_id_foreign` (`typeoperation_id`),
+  CONSTRAINT `operations_typeoperation_id_foreign` FOREIGN KEY (`typeoperation_id`) REFERENCES `type_operations` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of operations
 -- ----------------------------
-INSERT INTO `operations` VALUES ('20', '2', '\"{\\\"billets\\\":{\\\"6243336091df4\\\":{\\\"nominal\\\":\\\"10\\\",\\\"quantity\\\":\\\"4\\\",\\\"subtotal\\\":\\\"40\\\"}},\\\"pieces\\\":{\\\"624333609200b\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"20\\\",\\\"subtotal\\\":\\\"20\\\"}},\\\"centimes\\\":{\\\"62433360921f2\\\":{\\\"nominal\\\":\\\"2\\\",\\\"quantity\\\":\\\"30\\\",\\\"subtotal\\\":\\\"0.6\\\"}}}\"', '60.60', '0', '60.60', 'test remise', '2022-03-29', '2022-03-29 16:27:51', '2022-03-29 16:27:51');
-INSERT INTO `operations` VALUES ('21', '1', '\"{\\\"billets\\\":{\\\"6243339552833\\\":{\\\"nominal\\\":\\\"50\\\",\\\"quantity\\\":\\\"5\\\",\\\"subtotal\\\":\\\"250\\\"},\\\"624333c56fa1c\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"3\\\",\\\"subtotal\\\":\\\"15\\\"}},\\\"pieces\\\":{\\\"6243339552a55\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"3\\\",\\\"subtotal\\\":\\\"3\\\"}},\\\"centimes\\\":{\\\"6243339552c3b\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"23\\\",\\\"subtotal\\\":\\\"0.23\\\"}}}\"', '268.23', '268.23', '0', 'test Dépôt caisse 2', '2022-03-29', '2022-03-29 16:29:02', '2022-03-29 16:29:02');
-INSERT INTO `operations` VALUES ('22', '3', '\"{\\\"billets\\\":{\\\"624364212edba\\\":{\\\"nominal\\\":\\\"20\\\",\\\"quantity\\\":\\\"1\\\",\\\"subtotal\\\":\\\"20\\\"}},\\\"pieces\\\":{\\\"624364212f00f\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"2\\\",\\\"subtotal\\\":\\\"2\\\"}},\\\"centimes\\\":{\\\"624364212f212\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"0\\\",\\\"subtotal\\\":\\\"0\\\"}}}\"', '22.00', '0', '22.00', 'essai retrait', null, '2022-03-29 16:29:33', '2022-03-29 19:55:29');
+INSERT INTO `operations` VALUES ('1', '1', '\"{\\\"billets\\\":{\\\"6245d29cd7988\\\":{\\\"nominal\\\":\\\"10\\\",\\\"quantity\\\":\\\"2\\\",\\\"subtotal\\\":\\\"20\\\"},\\\"6245d2b181e4d\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"1\\\",\\\"subtotal\\\":\\\"5\\\"}},\\\"pieces\\\":{\\\"6245d29cd8315\\\":{\\\"nominal\\\":\\\"2\\\",\\\"quantity\\\":\\\"3\\\",\\\"subtotal\\\":\\\"6\\\"}},\\\"centimes\\\":{\\\"6245d29cd8c8f\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"5\\\",\\\"subtotal\\\":\\\"0.25\\\"}}}\"', '31.25', '31.25', '0', 'test dépôt de caisse', '2022-03-29', '2022-03-31 16:11:47', '2022-03-31 16:11:47');
+INSERT INTO `operations` VALUES ('2', '2', '\"{\\\"billets\\\":{\\\"6245d2c991923\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"2\\\",\\\"subtotal\\\":\\\"10\\\"}},\\\"pieces\\\":{\\\"6245d2c991c9c\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"5\\\",\\\"subtotal\\\":\\\"5\\\"}},\\\"centimes\\\":{\\\"6245d2c991f9a\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"0\\\",\\\"subtotal\\\":\\\"0\\\"}}}\"', '15.00', '0', '15.00', 'test remise en banque', '2022-03-28', '2022-03-31 16:12:19', '2022-03-31 16:12:19');
+INSERT INTO `operations` VALUES ('3', '3', '\"{\\\"billets\\\":{\\\"6245d2ed48c22\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"3\\\",\\\"subtotal\\\":\\\"15\\\"}},\\\"pieces\\\":{\\\"6245d2ed48fbc\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"0\\\",\\\"subtotal\\\":\\\"0\\\"}},\\\"centimes\\\":{\\\"6245d2ed4931e\\\":{\\\"nominal\\\":\\\"1\\\",\\\"quantity\\\":\\\"0\\\",\\\"subtotal\\\":\\\"0\\\"}}}\"', '15.00', '0', '15.00', 'test retrait', '2022-03-30', '2022-03-31 16:12:49', '2022-03-31 16:12:49');
+INSERT INTO `operations` VALUES ('4', '1', '\"{\\\"billets\\\":{\\\"6245d339f2fd2\\\":{\\\"nominal\\\":\\\"50\\\",\\\"quantity\\\":\\\"1\\\",\\\"subtotal\\\":\\\"50\\\"}},\\\"pieces\\\":{\\\"6245d339f3f4f\\\":{\\\"nominal\\\":\\\"2\\\",\\\"quantity\\\":\\\"5\\\",\\\"subtotal\\\":\\\"10\\\"}},\\\"centimes\\\":{\\\"6245d33a00534\\\":{\\\"nominal\\\":\\\"5\\\",\\\"quantity\\\":\\\"4\\\",\\\"subtotal\\\":\\\"0.2\\\"}}}\"', '160.20', '160.20', '0', 'test dépôt de caisse 2', null, '2022-03-31 16:13:40', '2022-03-31 16:13:54');
 
 -- ----------------------------
 -- Table structure for `password_resets`
@@ -128,15 +131,14 @@ CREATE TABLE `type_operations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of type_operations
 -- ----------------------------
-INSERT INTO `type_operations` VALUES ('1', 'Dépôt de caisse', '2022-03-29 17:48:53', '2022-03-29 17:48:58');
-INSERT INTO `type_operations` VALUES ('2', 'Remise en banque', '2022-03-29 17:49:13', '2022-03-29 17:49:19');
-INSERT INTO `type_operations` VALUES ('3', 'Retrait', '2022-03-29 17:49:30', '2022-03-29 17:49:34');
-INSERT INTO `type_operations` VALUES ('5', 'Test Opération', '2022-03-29 15:50:42', '2022-03-29 16:30:16');
+INSERT INTO `type_operations` VALUES ('1', 'Dépôt de caisse', null, null);
+INSERT INTO `type_operations` VALUES ('2', 'Remise en banque', null, null);
+INSERT INTO `type_operations` VALUES ('3', 'Retrait', null, null);
 
 -- ----------------------------
 -- Table structure for `users`
@@ -158,4 +160,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Hariony RAKOTOBE', 'user@gmail.com', null, '$2y$10$fS8eVXYn.qouJJad/PUd5ec28dw.jsIACiIdBLVGQL3qmxcZwmmsa', null, '2022-03-29 13:56:24', '2022-03-29 13:56:29');
+INSERT INTO `users` VALUES ('1', 'Hariony RAKOTOBE', 'user@gmail.com', null, '$2y$10$I6VWYhxloHP7agH3JZzxQ.dd9K4.hSvyCCryBJKgNCLxcOJqaLyHS', null, '2022-03-31 16:09:42', '2022-03-31 16:09:42');

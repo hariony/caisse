@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TypeOperationSeeder extends Seeder
 {
@@ -22,7 +23,7 @@ class TypeOperationSeeder extends Seeder
     {
         foreach (self::$datas as $data) {
             DB::table('type_operations')->insert([
-                'title' => $data,
+                'titre' => $data,
             ]);
         }
     }
